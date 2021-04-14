@@ -28,4 +28,11 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
         lastIndex=0;
         initialized=true; 
     }
+
+    public int getSeqSwap()
+    {
+        
+    }
+
+
 }

@@ -9,7 +9,10 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     public int seqSwap=0;
     public int optSwap=0;
 
-
+    public MaxHeap()
+    {
+        
+    }
 
 
 }

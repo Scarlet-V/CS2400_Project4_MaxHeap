@@ -4,6 +4,7 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     private T[] heap;
     private int lastIndex;
     private boolean initialized = false;
+    private static final int DEFAULT_CAPACITY = 25;
 
 
 

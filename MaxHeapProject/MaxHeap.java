@@ -38,4 +38,9 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     {
         return optSwap;
     }
+
+    public T getElementAt(int index)
+    {
+        return heap[index];
+    }
 }

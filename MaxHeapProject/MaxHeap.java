@@ -51,4 +51,9 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
         if(!isEmpty()) root = heap[1];
         return root;
     }
+
+    public boolean isEmpty()
+    {
+        return lastIndex < 1;
+    }
 }

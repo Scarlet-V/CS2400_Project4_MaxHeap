@@ -46,7 +46,7 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
 
     public T getMax()
     {
-        checkInitialisation();
+        checkInitialization();
         T root = null;
         if(!isEmpty()) root = heap[1];
         return root;
@@ -64,7 +64,7 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
 
     public void clear()
     {
-        checkInitialisation();
+        checkInitialization();
         while(lastIndex > -1)
         {
             heap[lastIndex]=null;
@@ -73,7 +73,7 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
         lastIndex=0;
     }
 
-    public void checkInitialisation()
+    public void checkInitialization()
     {
         if(!initialized)
         {
@@ -87,7 +87,7 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
 
     public void add(T newEntry)
     {
-        checkInitialisation();
+        checkInitialization();
         int newIndex = lastIndex+1;
         int parentIndex=newIndex/2;
         while((parentIndex>0) && newEntry.compareTo(heap[parentIndex])>0)
@@ -99,5 +99,19 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
         }
         heap[newIndex] = newEntry;
         lastIndex++;
+    }
+
+    public T removeMax()
+    {
+        checkInitialization();
+        T root = null;
+        if(!isEmpty())
+        {
+            root = heap[1];
+            heap[1]=heap[lastIndex];
+            lastIndex--;
+            reheap(1);
+        }
+        return root;
     }
 }

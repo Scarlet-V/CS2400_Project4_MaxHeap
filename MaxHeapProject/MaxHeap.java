@@ -5,6 +5,7 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     private int lastIndex;
     private boolean initialized = false;
     private static final int DEFAULT_CAPACITY = 25;
+    private static final int MAX_CAPACITY = 10000;
 
 
 

@@ -61,4 +61,12 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     {
         return lastIndex;
     }
+
+    public void clear()
+    {
+
+
+
+
+    }
 }

@@ -43,4 +43,12 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     {
         return heap[index];
     }
+
+    public T getMax()
+    {
+        checkInitialisation();
+        T root = null;
+        if(!isEmpty()) root = heap[1];
+        return root;
+    }
 }

@@ -70,8 +70,6 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
             heap[lastIndex]=null;
             lastIndex--;
         }
-
-
-
+        lastIndex=0;
     }
 }

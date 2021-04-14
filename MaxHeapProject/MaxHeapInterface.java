@@ -7,4 +7,5 @@ public interface MaxHeapInterface<T extends Comparable<? super T>>
     public T getMax();
     public boolean isEmpty();
     public int getSize();
+    public void clear();
 }

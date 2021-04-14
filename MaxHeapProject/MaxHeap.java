@@ -21,5 +21,11 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
         {
             initialCapacity=DEFAULT_CAPACITY;
         }
+        else if(initialCapacity>MAX_CAPACITY) initialCapacity=MAX_CAPACITY;
+        @SuppressWarnings("unchecked")
+        T[] tempHeap=(T[]) new Comparable[initialCapacity + 1];
+        heap=tempHeap;
+        lastIndex=0;
+        initialized=true; 
     }
 }

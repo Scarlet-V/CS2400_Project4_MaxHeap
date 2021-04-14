@@ -34,5 +34,8 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
         return seqSwap;
     }
 
-
+    public int getOptSwap()
+    {
+        return optSwap;
+    }
 }

@@ -10,4 +10,5 @@ public interface MaxHeapInterface<T extends Comparable<? super T>>
     public void clear();
     public T getElementAt(int index);
     public int getSeqSwap();
+    public int getOptSwap();
 }

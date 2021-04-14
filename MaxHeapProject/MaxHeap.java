@@ -75,6 +75,13 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
 
     public void checkInitialisation()
     {
-
+        if(!initialized)
+        {
+        @SuppressWarnings("unchecked")
+        T[] tempHeap=(T[]) new Comparable[DEFAULT_CAPACITY + 1];
+        heap=tempHeap;
+        lastIndex=0;
+        initialized=true; 
+        }
     }
 }

@@ -24,6 +24,14 @@ public class Main
             array[count++]=num;
             heap.add(num);
         }
+        for(int i=1;i<=10;++i)
+        {
+            raf.writeBytes(String.valueOf((Integer)heap.getElementAt(i))+" ");
+        }
+        raf.writeBytes("\n");
+        raf.writeBytes("Number Of Swaps performed in Sequential Heap: "+heap.getSeqSwap()+"\n");
+        raf.writeBytes("Heap after 10 removals: ");
+        
     
     
     }    

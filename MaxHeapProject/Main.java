@@ -31,7 +31,17 @@ public class Main
         raf.writeBytes("\n");
         raf.writeBytes("Number Of Swaps performed in Sequential Heap: "+heap.getSeqSwap()+"\n");
         raf.writeBytes("Heap after 10 removals: ");
-        
+        for(int i=0;i<10;++i) 
+        {
+            heap.removeMax();
+        }
+        for(int i=1;i<=10;++i) 
+        {
+            raf.writeBytes(String.valueOf((Integer)heap.getElementAt(i))+" ");
+            raf.writeBytes("\n");
+            MaxHeapInterface optHeap=new MaxHeap(array);
+            raf.writeBytes("Heap built using optimal insertion: ");
+        }
     
     
     }    

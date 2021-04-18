@@ -42,6 +42,31 @@ public class Main
             MaxHeapInterface optHeap=new MaxHeap(array);
             raf.writeBytes("Heap built using optimal insertion: ");
         }
+
+        or(int i=1;i<=10;++i)
+        {
+            raf.writeBytes(String.valueOf(optHeap.getElementAt(i))+" ");
+        }
+        raf.writeBytes("\n");
+        raf.writeBytes("Number Of Swaps performed in Sequential Heap: "+optHeap.getOptSwap()+"\n");
+        raf.writeBytes("Heap after 10 removals: ");
+        for(int i=0;i<10;++i) 
+        {
+            optHeap.removeMax();
+        }
+        for(int i=1;i<=10;++i)
+        {
+            raf.writeBytes(String.valueOf(optHeap.getElementAt(i))+" ");
+        }
+        raf.close();
+        inpRaf.close();
+
+    }
+    catch(IOException io)
+    {
+        System.out.println(io);
+    }
+
     
     
     }    

@@ -1,0 +1,3 @@
+Heap built using sequential insertion: null null null null null null null null null null 
+Number Of Swaps performed in Sequential Heap: 0
+Heap after 10 removals: null null null null null null null null null null 

@@ -8,7 +8,7 @@ public class Main {
         try{
         MaxHeapInterface heap = new MaxHeap<Integer>(100);
         
-        File file = new File("datasorted.txt");
+        File file = new File("data_sorted.txt");
         File outFile=new File("output.txt");
         RandomAccessFile inpRaf= new RandomAccessFile(file,"rw");
         RandomAccessFile raf= new RandomAccessFile(outFile,"rw");

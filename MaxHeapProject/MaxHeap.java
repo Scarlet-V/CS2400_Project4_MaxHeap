@@ -120,37 +120,38 @@ public final class MaxHeap<T extends Comparable<? super T>> implements MaxHeapIn
     {
         boolean done = false;
         T orphan = heap[rootIndex];
-        int leftChildIndex = 2*rootIndex;
-        while(!done && (leftChildIndex<=lastIndex))
+        int leftChildIndex = 2 * rootIndex;
+        while (!done && (leftChildIndex <= lastIndex) )
         {
-            int largerChildIndex = leftChildIndex;
+            int largerChildIndex = leftChildIndex; // Assume larger
             int rightChildIndex = leftChildIndex + 1;
-            if((rightChildIndex<=lastIndex) && (heap[rightChildIndex].compareTo(heap[largerChildIndex])>0))
+            if ( (rightChildIndex <= lastIndex) &&
+                    heap[rightChildIndex].compareTo(heap[largerChildIndex]) > 0)
             {
                 largerChildIndex = rightChildIndex;
-            }
-            if(orphan.compareTo(heap[largerChildIndex])<0)
+            } // end if
+            if (orphan.compareTo(heap[largerChildIndex]) < 0)
             {
-              heap[rootIndex] = heap[largerChildIndex];
-              rootIndex= largerChildIndex;
-              leftChildIndex = 2*rootIndex;
-              optSwap++;
+                heap[rootIndex] = heap[largerChildIndex];
+                rootIndex = largerChildIndex;
+                leftChildIndex = 2 * rootIndex;
             }
-            else done=true;
-        }
+            else
+                done = true;
+        } // end while
         heap[rootIndex] = orphan;
     }
 
     public MaxHeap(T[] entries)
     {
-        this(entries.length);
-        assert initialized = true;
-        optSwap=0;
-        for(int index=0;index<entries.length;index++)
-        {
-             heap[index+1]=entries[index];
-             lastIndex++;
-        }
-        for(int rootIndex=lastIndex/2;rootIndex>0;rootIndex--) reheap(rootIndex);
-    }
+        this(entries.length); // Call other constructor
+        lastIndex = entries.length;
+        // Assertion: integrityOK == true
+        // Copy given array to data field
+        for (int index = 0; index < entries.length; index++)
+            heap[index + 1] = entries[index];
+        // Create heap
+        for (int rootIndex = lastIndex / 2; rootIndex > 0; rootIndex--)
+        reheap(rootIndex);
+    } 
 }

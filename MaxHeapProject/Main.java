@@ -7,14 +7,13 @@ public class Main {
     {
         try{
         MaxHeapInterface heap = new MaxHeap<Integer>(100);
-        
         File file = new File("data_sorted.txt");
         File outFile=new File("output.txt");
         RandomAccessFile inpRaf= new RandomAccessFile(file,"rw");
         RandomAccessFile raf= new RandomAccessFile(outFile,"rw");
         raf.writeBytes("Heap built using sequential insertion: ");
-        Integer num;
-        Integer array[]=new Integer[100];
+        int num;
+        int array[]=new Integer[100];
         int count=0;
         while(inpRaf.getFilePointer()<inpRaf.length())
         {
